@@ -100,6 +100,10 @@ function(make_level ROUND ZONE TIME CG_CHANGE)
 	else()
 		target_link_libraries(${EXECUTABLE_NAME} PRIVATE libvgmstream)
 	endif()
+
+	if(NOT WIN32)
+		target_link_libraries(${EXECUTABLE_NAME} PRIVATE m)
+	endif()
 endfunction()
 
 # These source lists are directly from the ELF files' debug data, so they must be accurate.
