@@ -101,7 +101,7 @@ function(make_level ROUND ZONE TIME CG_CHANGE)
 		target_link_libraries(${EXECUTABLE_NAME} PRIVATE libvgmstream)
 	endif()
 
-	if(NOT WIN32)
+	if(NOT MSVC)
 		target_link_libraries(${EXECUTABLE_NAME} PRIVATE m)
 	endif()
 endfunction()
